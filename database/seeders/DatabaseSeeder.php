@@ -14,12 +14,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-       DB::table('users')->insert([
-           [
-               "name"=>"Farhad",
-               "email"=>"admin@admin.com",
-               "password"=>bcrypt("laravel")
-           ]
-       ]);
+        DB::table('users')->insert([
+            [
+                "name" => "Admin",
+                "email" => "admin@admin.com",
+                "password" => bcrypt("laravel")
+            ],
+            [
+                "name" => "Webmaster",
+                "email" => "wb@wb.com",
+                "password" => bcrypt("laravel")
+            ],
+            [
+                "name" => "Member",
+                "email" => "member@member.com",
+                "password" => bcrypt("laravel")
+            ]
+        ]);
+        $this->call([
+            RestaurantSeeder::class,
+            ReviewSeeder::class,
+            PostSeeder::class
+        ]);
     }
 }

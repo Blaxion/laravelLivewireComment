@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class RestaurantSeeder extends Seeder
 {
@@ -13,6 +14,15 @@ class RestaurantSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('restaurants')->insert([
+            [
+                "name" => "First restaurant",
+                "cover" =>"rest1.jpg" 
+            ],
+            [
+                "name" => "Second restaurant",
+                "cover" =>"rest2.jpg" 
+            ]
+        ]);
     }
 }
