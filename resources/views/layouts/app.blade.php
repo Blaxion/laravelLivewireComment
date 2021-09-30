@@ -18,21 +18,22 @@
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        
+        <div class=" bg-gray-100 flex ">
             @include('layouts.navigation')
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-
             <!-- Page Content -->
-            <main>
+            <main class="w-full">
+                <header class="bg-white shadow ">
+                    <div class=" mx-auto py-10 px-4 sm:px-6 lg:px-8 text-center  ">
+                        {{ $header }}
+                    </div>
+                </header>
                 {{ $slot }}
-            </main>
+            </main> 
+            
         </div>
+        <x-auth-validation-messages/>
         @livewireScripts
     </body>
 </html>
